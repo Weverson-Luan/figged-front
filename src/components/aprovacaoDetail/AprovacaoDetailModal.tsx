@@ -58,8 +58,6 @@ class AprovacaoDetailModal extends Component  <any, any> {
 
   async simButtonOnClick() {
     const user:string = this.props.user
-  //   const resulSecUsersId = await localStorage.getItem("@sec_users_id")
-  // console.log("sec", resulSecUsersId)
     if (this.props.modal.type === 'reprovar') {
       const config = { cancelable: true, bubbles: true }
       const reprovacaoMotivoForm = document.getElementById('reprovacaoMotivoForm')!
@@ -190,7 +188,7 @@ class AprovacaoDetailModal extends Component  <any, any> {
     return (
       <Container>
         <Row>
-          <Col lg={6}>
+          <Col lg={6} style={{marginBottom: 8}}>
             <div className="d-grid">
               <Button variant="danger" onClick={this.handleClose}>Cancelar</Button>
             </div>

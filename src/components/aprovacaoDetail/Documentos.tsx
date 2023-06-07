@@ -18,7 +18,6 @@ const Documentos = (props:any) => {
     }
 
     const reprovarButtonOnClick = (documento:any) => {
-      console.log("data documento => ", documento)
         props.fetchDocumentoModal(
           {
             type: 'reprovar',
@@ -77,10 +76,6 @@ const Documentos = (props:any) => {
             }
     
             const getUser = () => {
-              const teste1 = window.location.href;
-              const objURL = new URL(teste1);
-              const params = objURL.searchParams.get('username');
-              console.log("USUARIO",params)
               if (documento.sec_users_id && documento.data_atualizacao_usuario) {
                 const dataAtualizacao:any = new Date(documento.data_atualizacao_usuario)
                 return `${documento.sec_users_id} ${dataAtualizacao.toLocaleString('pt-BR')}`

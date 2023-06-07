@@ -10,8 +10,6 @@ const MainNavbar = (props:any) => {
 
   localStorage.setItem('@sec_users_id',JSON.stringify(params))
   
-  console.log("USUARIO=>",params)
-
   const renderLinks = () => {
 
     const pendentesOnClick = (e: any) => {

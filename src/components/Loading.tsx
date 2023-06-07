@@ -13,7 +13,7 @@ const Loading = () => {
       <div className="d-flex flex-wrap justify-content-center">
         <Spinner animation="border" style={style} />
         <p className='w-100 text-center p-0 m-0 mt-3'>
-          <strong>Carregando, por favor, aguade.</strong>
+          <strong>Carregando, por favor, aguarde.</strong>
         </p>
       </div>
     </Col>
