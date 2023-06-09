@@ -47,7 +47,20 @@ export const fetchAprovacao = (params: any) => async (dispatch: any) => {
 
 // Documentos
 export const fetchDocumento = (id: any) => async (dispatch: any) => {
+
+  // const responseAprovacao = await axios.get(
+  //   `http://10.0.0.155:1111/aprovacao/${id}/?format=json/${id}`,
+  //   {
+  //     headers: {
+  //       Authorization: `Token ec4c56361ddbb8c058be23575e8bb7cff585c2c9`,
+  //       "Access-Control-Allow-Origin": "*",
+  //       "Content-Type": "application/json",
+  //     },
+  //   }
+  // );
+
   const url = `/aprovacao/${id}/?format=json`;
+
   const response = await sgt20Api.get(url);
   dispatch({ type: FETCH_DOCUMENTO, payload: response });
 };
@@ -95,6 +108,8 @@ export const fetchDocumentoAprovar =
           progress: undefined,
         });
       }
+           // regarrecar a pagina 
+           window.location.reload()
       dispatch({ type: FETCH_DOCUMENTO_CONFIRMACAO, payload: responseData });
     } else {
       // montando data
@@ -121,6 +136,8 @@ export const fetchDocumentoAprovar =
         }
       );
 
+      // recarge tela para o usuario
+      window.location.reload();
       // se deu tudo certo, deve mostrar o toast-message
       if (responseData.data) {
         toast.success("Documento aprovado com sucesso.", {
@@ -189,6 +206,9 @@ export const fetchDocumentoReprovar =
         });
       }
 
+      // recarge tela para o usuario
+      window.location.reload()
+
       dispatch({ type: FETCH_DOCUMENTO_CONFIRMACAO, payload: responseData });
     } else {
       // montando dados para enviar para api
@@ -233,7 +253,8 @@ export const fetchDocumentoReprovar =
           progress: undefined,
         });
       }
-
+      // recarge tela para o usuario
+      window.location.reload();
       // dispatch
       dispatch({ type: FETCH_DOCUMENTO_CONFIRMACAO, payload: responseData });
     }

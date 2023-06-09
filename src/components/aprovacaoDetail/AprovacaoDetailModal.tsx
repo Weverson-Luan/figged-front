@@ -13,7 +13,7 @@ class AprovacaoDetailModal extends Component  <any, any> {
     this.handleClose = this.handleClose.bind(this);
     this.simButtonOnClick = this.simButtonOnClick.bind(this);
   }
-
+  
   state = {
       'reprovarMensagemOpcoes': [],
       'reprovarMensagemOpcoesLoading': false,
@@ -203,7 +203,8 @@ class AprovacaoDetailModal extends Component  <any, any> {
     )
   }
 
-  render() {    
+
+  render() {   
     return (
       <>
         <Modal show={this.props.modal.show} onHide={ () => (this.handleClose()) }>
