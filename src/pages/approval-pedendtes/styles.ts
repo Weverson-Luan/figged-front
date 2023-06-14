@@ -6,6 +6,8 @@ import styled from "styled-components";
 const Container = styled.div`
   width: 100%;
   display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-wrap: wrap;
 `;
 
@@ -14,16 +16,20 @@ const WrapperContent = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   background-color: transparent;
+  padding-left: 16px;
+  padding-right: 16px;
   
 `;
 
 const WrapperImage = styled.div`
-  width: 480px;
+  width: 420px;
   margin-top: 20px;
   background-color: transparent;
-  margin-left: 16px;
+  display: flex;
+  flex-wrap: wrap;
+
 `;
 type HeaderProps = {
   backgroundColor: string;
@@ -63,8 +69,8 @@ type ButtonProps = {
   backgroundColor: string
 }
 const Button = styled.button<ButtonProps>`
-  width: 230px;
-  height: 40px;
+  width: 200px;
+  height: 35px;
   border-radius: 6px;
   background-color: ${({ backgroundColor })=> backgroundColor ? backgroundColor : 'red' };
 `;

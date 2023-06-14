@@ -51,7 +51,7 @@ const TitleTwo = styled(Link)`
 const BorderCustom = styled.div`
   width: 100%;
   height: 60px;
-  border: 1px solid #131010;
+  border: 1px solid ${({theme})=> theme.colors.gray_500};
   margin-top: 12px;
   display: flex;
   align-items: center;
@@ -60,15 +60,17 @@ const BorderCustom = styled.div`
 `;
 
 const SubTitleTwo = styled(Link)`
-  color: #302C2C;
-  font-size: 14px;
+  color: ${({theme})=> theme.colors.gray_500};
+  font-size: 16px;
   cursor: pointer;
+
+  text-decoration: none;
   
 
 `;
 
 const WrapperTitleBorder = styled.div`
-  width: 200px;
+  width: 230px;
   height: 60px;
   display: flex;
   align-items: center;

@@ -27,7 +27,7 @@ const Header = () => {
       </Container>
       <BorderCustom>
         <WrapperTitleBorder>
-          <SubTitleTwo to={"aprovacoes"}>Lista Aprovação</SubTitleTwo>
+          <SubTitleTwo to={"aprovacoes"}>Lista de Aprovações</SubTitleTwo>
           <span>/</span>
           <SubTitleTwo to={"aprovacao"}>Atualizar</SubTitleTwo>
         </WrapperTitleBorder>
