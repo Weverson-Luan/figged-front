@@ -3,19 +3,24 @@
  */
 import styled from "styled-components";
 
-const Container = styled.div``;
+// typings
+import { WrapperTextFooterProps, TextNumberPageProps } from "./interface";
 
-const Text = styled.h1``;
+const Container = styled.div`
+  margin-top: 1rem;
+`;
 
 const TableHtml = styled.table`
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 1.5rem;
 
   @media screen and (max-width: 768px) {
     display: block;
     width: 100%;
   }
 `;
+
 const Thead = styled.thead`
   background: ${({ theme }) => theme.colors.natural};
 
@@ -23,6 +28,7 @@ const Thead = styled.thead`
     display: none;
   }
 `;
+
 const Tr = styled.tr`
   cursor: pointer;
 
@@ -43,17 +49,18 @@ const Tr = styled.tr`
     width: 100%;
 
     & + tr {
-      margin-top: 16px;
+      margin-top: 1rem;
     }
   }
 `;
+
 const Th = styled.th`
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   color: ${({ theme }) => theme.colors.black_200};
   opacity: 1;
-  padding: 8px 16px;
+  padding: 8px 1rem;
   vertical-align: top;
   text-align: left;
   background: ${({ theme }) => theme.colors.natural};
@@ -69,14 +76,21 @@ const Tbody = styled.tbody`
 `;
 
 const Td = styled.td`
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 0.5px;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.gray_700};
-  padding: 8px 16px;
+  padding: 8px 1rem;
   text-align: left;
   overflow-y: auto;
   cursor: pointer;
+
+  //formatar link
+  a {
+    color: ${({ theme }) => theme.colors.blue_100};
+    text-decoration: none;
+    cursor: pointer;
+  }
 
   ::-webkit-scrollbar {
     height: 2px;
@@ -88,7 +102,7 @@ const Td = styled.td`
 
   ::-webkit-scrollbar-thumb {
     background: blue;
-    border-radius: 12px;
+    border-radius: 0.75rem;
   }
 
   @media screen and (max-width: 768px) {
@@ -103,7 +117,7 @@ const Td = styled.td`
       position: absolute;
       left: 0;
       width: 50%;
-      padding-left: 16px;
+      padding-left: 1rem;
       font-weight: bold;
       text-align: left;
     }
@@ -114,7 +128,59 @@ const Td = styled.td`
   }
 `;
 
+const FooterTable = styled.div`
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+`;
+
+const TextSpanLeft = styled.span`
+  font-size: 1rem;
+  color: ${({ theme }) => theme.colors.black_200};
+  margin-right: 0.75rem;
+  cursor: pointer;
+`;
+
+const TextSpanRight = styled.span`
+  font-size: 1rem;
+  color: ${({ theme }) => theme.colors.black_200};
+  margin-left: 0.75rem;
+  cursor: pointer;
+`;
+
+const WrapperTextFooter = styled.div<WrapperTextFooterProps>`
+  width: 2.8rem;
+  height: 2rem;
+  margin: 2px;
+  border: 1px solid ${({ theme }) => theme.colors.gray_200};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${({ theme, background }) =>
+    background ? theme.colors.blue_100 : theme.colors.natural};
+`;
+
+const TextNumberPage = styled.p<TextNumberPageProps>`
+  font-size: 0.8rem;
+  color: ${({ theme, color }) => (color ? color : theme.colors.natural)};
+`;
 /**
  * EXPORTS
  */
-export { Container, Text, TableHtml, Thead, Tr, Th, Tbody, Td };
+export {
+  Container,
+  TableHtml,
+  Thead,
+  Tr,
+  Th,
+  Tbody,
+  Td,
+  FooterTable,
+  TextSpanLeft,
+  TextSpanRight,
+  WrapperTextFooter,
+  TextNumberPage,
+};

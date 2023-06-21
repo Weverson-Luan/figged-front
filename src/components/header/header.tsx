@@ -1,13 +1,13 @@
 /**
  * IMPORTS
  */
-import { Link } from "react-router-dom";
 import {
   Container,
   WrapperTitle,
   Title,
   WrapperTitleRighr,
   TitleTwo,
+  WrapperBorderCustom,
   BorderCustom,
   SubTitleTwo,
   WrapperTitleBorder,
@@ -18,20 +18,24 @@ const Header = () => {
     <>
       <Container>
         <WrapperTitle>
-          <Title>Figged</Title>
+          <Title to={'/'}>Figged</Title>
         </WrapperTitle>
+
         <WrapperTitleRighr>
           <TitleTwo to={"aprovacao-pedentes"}>Aprovação Pendentes</TitleTwo>
-          <TitleTwo to={"aprovacoes"}>Todas Aprovação</TitleTwo>
+          <TitleTwo to={"aprovation-listing"}>Todas Aprovação</TitleTwo>
         </WrapperTitleRighr>
       </Container>
-      <BorderCustom>
+      
+      <WrapperBorderCustom>
+           <BorderCustom>
         <WrapperTitleBorder>
-          <SubTitleTwo to={"aprovacoes"}>Lista de Aprovações</SubTitleTwo>
+          <SubTitleTwo to={"aprovation-listing"}>Lista de Aprovações</SubTitleTwo>
           <span>/</span>
           <SubTitleTwo to={"aprovacao"}>Atualizar</SubTitleTwo>
         </WrapperTitleBorder>
       </BorderCustom>
+      </WrapperBorderCustom>
     </>
   );
 };

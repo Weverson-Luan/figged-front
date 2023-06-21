@@ -1,26 +1,22 @@
 /**
  * IMPORTS
  */
-import { combineReducers } from 'redux';
-import { user } from '../features/user';
+import { combineReducers } from "redux";
+import { user } from "../features/user";
 
-import { persistConfig, persistReducer } from './persist';
-
+import { persistConfig, persistReducer } from "./persist";
 
 /**
- * I create a root reducer.
+ * Eu crio um redutor de raiz.
  */
 const reducer = combineReducers({
   [user.name]: user.reducer,
-  
 }) as any;
 
-
 /**
- * I create a persisted root reducer.
+ * Eu crio um redutor de raiz persistente..
  */
 const persistedReducer = persistReducer(persistConfig, reducer);
-
 
 /**
  * EXPORTS

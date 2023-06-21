@@ -2,13 +2,34 @@
  * IMPORTS
  */
 
-import { Container, TableHtml, Thead, Tr, Th, Tbody, Td } from "./styles";
+import { useTheme } from "styled-components";
+
+import { Link } from "react-router-dom";
+
+// data-fake
+import { dataTable } from "./data-fake";
+
+// styles
+import {
+  Container,
+  TableHtml,
+  Thead,
+  Tr,
+  Th,
+  Tbody,
+  Td,
+  FooterTable,
+  TextSpanLeft,
+  TextSpanRight,
+  WrapperTextFooter,
+  TextNumberPage,
+} from "./styles";
+
 
 const Table = () => {
+  const theme = useTheme();
   return (
     <Container>
-      {/*<Text>Table</Text>*/}
-
       <TableHtml>
         <Thead>
           <Tr>
@@ -25,79 +46,35 @@ const Table = () => {
         </Thead>
 
         <Tbody>
-          <Tr>
-            <Td>1</Td>
-            <Td>10/09/2022</Td>
-            <Td>200</Td>
-            <Td>R$ 300,00</Td>
-            <Td>SIM</Td>
-            <Td>LUAN</Td>
-            <Td>RFG0957</Td>
-            <Td>Isauro Neto (b)</Td>
-            <Td>Bobina</Td>
-          </Tr>
-
-          <Tr>
-            <Td>1</Td>
-            <Td>10/09/2022</Td>
-            <Td>200</Td>
-            <Td>R$ 300,00</Td>
-            <Td>SIM</Td>
-            <Td>LUAN</Td>
-            <Td>RFG0957</Td>
-            <Td>Isauro Neto (b)</Td>
-            <Td>Bobina</Td>
-          </Tr>
-
-          <Tr>
-            <Td>1</Td>
-            <Td>10/09/2022</Td>
-            <Td>200</Td>
-            <Td>R$ 300,00</Td>
-            <Td>SIM</Td>
-            <Td>LUAN</Td>
-            <Td>RFG0957</Td>
-            <Td>Isauro Neto (b)</Td>
-            <Td>Bobina</Td>
-          </Tr>
-
-          <Tr>
-            <Td>1</Td>
-            <Td>10/09/2022</Td>
-            <Td>200</Td>
-            <Td>R$ 300,00</Td>
-            <Td>SIM</Td>
-            <Td>LUAN</Td>
-            <Td>RFG0957</Td>
-            <Td>Isauro Neto (b)</Td>
-            <Td>Bobina</Td>
-          </Tr>
-
-          <Tr>
-            <Td>1</Td>
-            <Td>10/09/2022</Td>
-            <Td>200</Td>
-            <Td>R$ 300,00</Td>
-            <Td>SIM</Td>
-            <Td>LUAN</Td>
-            <Td>RFG0957</Td>
-            <Td>Isauro Neto (b)</Td>
-            <Td>Bobina</Td>
-          </Tr>
-
-          <Tr>
-            <Td>1</Td>
-            <Td>10/09/2022</Td>
-            <Td>200</Td>
-            <Td>R$ 300,00</Td>
-            <Td>SIM</Td>
-            <Td>LUAN</Td>
-            <Td>RFG0957</Td>
-            <Td>Isauro Neto (b)</Td>
-            <Td>Bobina</Td>
-          </Tr>
+          {dataTable.map((data) => (
+            <Tr key={String(data.id)}>
+              <Td>{data.id}</Td>
+              <Td>{data.date_created}</Td>
+              <Td>{data.status}</Td>
+              <Td>{data.viagem}</Td>
+              <Td>{data.bobina}</Td>
+              <Td>
+                <Link to={`aprovacao/${data.id}`}>{data.driver}</Link>
+              </Td>
+              <Td>{data.plate}</Td>
+              <Td>{data.group}</Td>
+              <Td>{data.type}</Td>
+            </Tr>
+          ))}
         </Tbody>
       </TableHtml>
+
+      <FooterTable>
+        <TextSpanLeft>Anterior </TextSpanLeft>
+        <WrapperTextFooter background={true}>
+          <TextNumberPage>1</TextNumberPage>
+        </WrapperTextFooter>
+
+        <WrapperTextFooter>
+          <TextNumberPage color={theme.colors.blue_100}>2</TextNumberPage>
+        </WrapperTextFooter>
+        <TextSpanRight>Próximo</TextSpanRight>
+      </FooterTable>
     </Container>
   );
 };

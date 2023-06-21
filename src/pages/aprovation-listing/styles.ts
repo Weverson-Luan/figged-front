@@ -9,7 +9,7 @@ const Container = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   flex-wrap: wrap;
-  padding: 0 16px;
+  padding: 0 1rem;
 `;
 
 const WrapperContent = styled.div`
@@ -24,11 +24,11 @@ const WrapperContent = styled.div`
 const WrapperTitle = styled.div`
   width: 100%;
   border-bottom: 2px solid ${({ theme }) => theme.colors.gray_200};
-  margin-bottom: 34px;
+  margin-bottom: 2.12rem;
 
   @media screen and (max-width: 768px) {
     :first-child p {
-      font-size: 18px;
+      font-size: 1.1rem;
     }
   }
 `;

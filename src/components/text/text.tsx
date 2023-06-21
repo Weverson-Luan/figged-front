@@ -19,11 +19,13 @@ const Text: React.FC<ITextProps> = ({
   weight,
   textDecoration,
   ellipsis,
+  width,
   ...rest
 }) => (
   <TextStyled
     id={id}
     color={color}
+    width={width}
     size={size}
     align={align}
     marginBottom={marginBottom}

@@ -3,39 +3,44 @@
  */
 
 import { useTheme } from "styled-components";
+
+// components
 import { Table } from "../../components/table";
 import { Text } from "../../components/text";
+import { Filter } from "../../components/filter";
+
+
+// styles
+import { ContainerMain, ContainerFiltered, WrapperTable, WrapperTitle } from "./styles"
 
 const Home = () => {
   const theme = useTheme();
   return (
-    <div style={{ paddingLeft: 16 }}>
-      <Text
-        marginTop={8}
-        text="Lista de documentos aprovados:"
-        align="left"
-        letterHeight={36}
-        color={theme.colors.black_200}
-        size={18}
-        weight="600"
-        marginBottom={30}
-      />
-      <div
-        style={{ width: "100%", border: "1px solid #cdcdcd", marginBottom: 16 }}
-      >
+    <ContainerMain>
+      <WrapperTitle>
         <Text
-          marginTop={8}
-          text="Filtro:"
+          marginTop={18}
+          text="Lista de Documentos:"
           align="left"
-          letterHeight={36}
+          letterHeight={24}
+          letterSpacing={0.5}
           color={theme.colors.black_200}
-          size={18}
+          size={24}
           weight="600"
-          marginBottom={70}
+          marginBottom={30}
         />
-      </div>
-      <Table />
-    </div>
+      </WrapperTitle>
+
+      {/**COMPONENTE DE FILTRO */}
+      <ContainerFiltered>
+        <Filter />
+      </ContainerFiltered>
+
+      {/**COMPONENTE DE TABELA */}
+      <WrapperTable>
+        <Table />
+      </WrapperTable>
+    </ContainerMain>
   );
 };
 

@@ -1,13 +1,17 @@
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
+
+// routes
 import AppRoutes from "./routes/routes";
-import GlobalStyle from "./global/styles/global";
+
+// redux
 import store from "./redux/store";
 
 // styles
+import GlobalStyle from "./global/styles/global";
 import theme from "./global/styles/theme";
 
-const App1 = () => {
+const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
@@ -18,4 +22,4 @@ const App1 = () => {
   );
 };
 
-export default App1;
+export default App;

@@ -1,13 +1,13 @@
 /**
  * IMPORTS
  */
-import { createGlobalStyle, css } from 'styled-components'
-import { devices } from './devices';
+import { createGlobalStyle, css } from "styled-components";
+import { devices } from "./devices";
 
 /**
  * I am a global style.
  */
- export default createGlobalStyle`
+export default createGlobalStyle`
 
  * {
    margin: 0;
@@ -28,6 +28,7 @@ import { devices } from './devices';
  }
 
  body {
+   width: 100%;
    min-height: 100vh;
    min-height: -webkit-fill-available;
    font-family: 'Poppins', sans-serif;

@@ -1,4 +1,0 @@
-/**
- * EXPORTS
- */
-export * from "./aprovation"

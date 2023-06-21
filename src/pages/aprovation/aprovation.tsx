@@ -3,106 +3,46 @@
  */
 
 import { useTheme } from "styled-components";
+import { useParams } from "react-router-dom";
+
+// components
 import { Text } from "../../components/text";
-import {
-  Container,
-  WrapperImage,
-  Image,
-  HeaderImage,
-  FooterImage,
-  WrapperContent,
-  Button,
-  WrapperTextUser,
-} from "./styles";
+
+// styles
+import { ContainerMain, WrapperImage, WrapperTitle } from "./styles"
+import { ImageCustom } from "../../components/image";
+import { Table } from "../../components/table";
 
 const Aprovation = () => {
   const theme = useTheme();
-  const data = [
-    { id: "1", name: "one" },
-    { id: "2", name: "true" },
-    { id: "3", name: "tree" },
-    { id: "3", name: "tree" },
-  ];
+
+  const { id_bobina } = useParams();
   return (
-    <Container>
-      <div style={{ paddingLeft: 16 }}>
+    <ContainerMain>
+      <WrapperTitle>
         <Text
-          marginTop={8}
-          text="Lista de documentos aprovados:"
+          width={'100%'}
+          marginTop={18}
+          text={`Documento do Comprovante da Viagem ${id_bobina} (Aguardando)`}
           align="left"
-          letterHeight={36}
+          letterHeight={24}
+          letterSpacing={0.5}
           color={theme.colors.black_200}
-          size={18}
+          size={24}
           weight="600"
+          marginBottom={16}
         />
-      </div>
-      <WrapperContent>
-        {data.map((dates) => (
-          <div>
-            <WrapperImage key={dates.id}>
-              <HeaderImage backgroundColor={"green"}>
-                <Text
-                  text="Aprovado"
-                  align="center"
-                  letterHeight={36}
-                  color={theme.colors.natural}
-                  size={18}
-                />
-              </HeaderImage>
-              <Image src="https://www.campoere.com/image/midia/1-60622f283b1d0.jpg&w=470&h=246&crop-to-fit&q=90" />
+      </WrapperTitle>
 
-              <WrapperTextUser>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <Text
-                    text="Usuário:"
-                    align="left"
-                    letterHeight={36}
-                    color={theme.colors.black_200}
-                    size={15}
-                    width={17}
-                    weight="600"
-                  />
-                  <p style={{ fontSize: 14 }}>Weverson Luan</p>
+      <WrapperImage>
+            <ImageCustom type="pedente" onClickApproved={()=> alert("Aprovar?")} onClickDisapproved={()=> alert("Reprovar?")}/>
+            <ImageCustom type="pedente" onClickApproved={()=> alert("Aprovar?")} onClickDisapproved={()=> alert("Reprovar?")}/>
+            <ImageCustom type="pedente" onClickApproved={()=> alert("Aprovar?")} onClickDisapproved={()=> alert("Reprovar?")}/>
+      </WrapperImage>
 
-                  <span style={{ marginLeft: 12, fontSize: 14 }}>
-                    Data: 10/06/2023
-                  </span>
-                </div>
-              </WrapperTextUser>
-
-              <FooterImage>
-                <Button backgroundColor={theme.colors.green_400}>
-                  <Text
-                    text="Aprovar"
-                    align="center"
-                    letterHeight={35}
-                    color={theme.colors.natural}
-                    weight="600"
-                    size={14}
-                  />
-                </Button>
-
-                <Button backgroundColor={theme.colors.red_300}>
-                  <Text
-                    text="Reprovar"
-                    align="center"
-                    letterHeight={35}
-                    color={theme.colors.natural}
-                    weight="600"
-                    size={14}
-                  />
-                </Button>
-              </FooterImage>
-            </WrapperImage>
-          </div>
-        ))}
-      </WrapperContent>
-    </Container>
+  
+      <Table />
+    </ContainerMain>
   );
 };
 
