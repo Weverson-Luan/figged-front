@@ -1,4 +1,4 @@
 /**
  * EXPORTS
  */
-export * from "./approval-pedendtes"
+export * from "./approval-pedendtes";

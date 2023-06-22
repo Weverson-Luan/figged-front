@@ -33,7 +33,7 @@
 <!--- Add a project description --->
 ## 📝 Sobre
 
-**FigGed**  Aplicação para gerencimento de fotos de bobinas e de documentos de mercadorias.
+**FigGed**  Frontend do aplicativo para gerenciamento de documentos eletrônicos (foto das boninas e dos comprovantes de entrega). Essa aplicação fica dentro do SGT20 são algumas telas que ficam dentro do menu FigGed.
 
 &nbsp;
 

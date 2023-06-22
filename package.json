@@ -1,81 +1,112 @@
 {
-  "name": "figged-frontend",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@reduxjs/toolkit": "^1.9.5",
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.4.1",
-    "@types/lodash": "^4.14.180",
-    "@types/node": "^16.11.26",
-    "@types/react": "^17.0.42",
-    "@types/react-dom": "^17.0.14",
-    "@types/react-router-bootstrap": "^0.24.5",
-    "@types/styled-components": "^5.1.26",
-    "axios": "^1.4.0",
-    "bootstrap": "^5.1.3",
-    "bootstrap-icons": "^1.8.1",
-    "date-fns": "^2.28.0",
-    "express": "^4.18.1",
-    "final-form": "^4.20.6",
-    "lodash": "^4.17.21",
-    "next-redux-wrapper": "^8.1.0",
-    "react": "^18.2.0",
-    "react-bootstrap": "^2.2.1",
-    "react-bootstrap-icons": "^1.8.1",
-    "react-dom": "^18.2.0",
-    "react-final-form": "^6.5.9",
-    "react-hook-form": "^7.29.0",
-    "react-icons": "^4.9.0",
-    "react-redux": "^7.2.6",
-    "react-router-bootstrap": "^0.26.1",
-    "react-router-dom": "^6.2.2",
-    "react-scripts": "5.0.0",
-    "react-select": "^5.7.3",
-    "react-toastify": "^8.2.0",
-    "redux": "^4.0.5",
-    "redux-form": "^8.3.8",
-    "redux-persist": "^6.0.0",
-    "redux-thunk": "^2.4.2",
-    "styled": "^1.0.0",
-    "styled-components": "^5.3.5",
-    "typescript": "^4.6.2",
-    "viewerjs": "^1.10.5",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "main": "index.tsx",
-  "repository": "git@github.com:expfig/figged-frontend.git",
-  "author": "Edu",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/lucene": "^2.1.4",
-    "@types/react-icons": "^3.0.0",
-    "@types/redux-form": "^8.3.3"
-  }
+	"name": "figged-frontend",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@reduxjs/toolkit": "^1.9.5",
+		"@typescript-eslint/parser": "^5.60.0",
+		"axios": "^1.4.0",
+		"bootstrap": "^5.1.3",
+		"bootstrap-icons": "^1.8.1",
+		"date-fns": "^2.28.0",
+		"eslint-config-prettier": "^8.1.0",
+		"eslint-plugin-prettier": "^3.3.1",
+		"express": "^4.18.1",
+		"final-form": "^4.20.6",
+		"lodash": "^4.17.21",
+		"next-redux-wrapper": "^8.1.0",
+		"react": "^18.2.0",
+		"react-bootstrap": "^2.2.1",
+		"react-bootstrap-icons": "^1.8.1",
+		"react-dom": "^18.2.0",
+		"react-final-form": "^6.5.9",
+		"react-hook-form": "^7.29.0",
+		"react-icons": "^4.9.0",
+		"react-redux": "^7.2.6",
+		"react-router-bootstrap": "^0.26.1",
+		"react-router-dom": "^6.2.2",
+		"react-scripts": "5.0.0",
+		"react-select": "^5.7.3",
+		"react-toastify": "^8.2.0",
+		"redux": "^4.0.5",
+		"redux-form": "^8.3.8",
+		"redux-persist": "^6.0.0",
+		"redux-thunk": "^2.4.2",
+		"styled": "^1.0.0",
+		"styled-components": "^5.3.5",
+		"typescript": "^5.1.3",
+		"viewerjs": "^1.10.5",
+		"web-vitals": "^2.1.4"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "jest",
+		"test:dev": "jest --watchAll=true",
+		"lint": "eslint . --fix --max-warnings=0",
+		"format": "prettier . --write",
+		"eject": "react-scripts eject",
+		"prepare": "husky install"
+	},
+	"lint-staged": {
+		"*.{tsx,ts}": "eslint --cache --fix",
+		"*.--write": "prettier --write"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"main": "index.tsx",
+	"repository": "git@github.com:expfig/figged-frontend.git",
+	"author": "Weverson Luan",
+	"license": "false",
+	"devDependencies": {
+		"@swc/core": "^1.3.66",
+		"@swc/jest": "^0.2.26",
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^14.0.0",
+		"@testing-library/user-event": "^14.4.3",
+		"@types/jest": "^29.5.2",
+		"@types/lodash": "^4.14.180",
+		"@types/lucene": "^2.1.4",
+		"@types/node": "^16.11.26",
+		"@types/react-icons": "^3.0.0",
+		"@types/react-router-bootstrap": "^0.24.5",
+		"@types/redux-form": "^8.3.3",
+		"@types/styled-components": "^5.1.26",
+		"@typescript-eslint/eslint-plugin": "^5.50.0",
+		"eslint": "^8.43.0",
+		"eslint-config-standard-with-typescript": "^35.0.0",
+		"eslint-plugin-import": "^2.25.2",
+		"eslint-plugin-jest": "^27.2.2",
+		"eslint-plugin-n": "^15.0.0",
+		"eslint-plugin-promise": "^6.0.0",
+		"eslint-plugin-react": "^7.32.2",
+		"exact": "^0.8.0",
+		"husky": "^8.0.3",
+		"jest": "^29.5.0",
+		"jest-environment-jsdom": "^29.5.0",
+		"lint-staged": "^13.2.2",
+		"prettier": "^2.8.8",
+		"ts-node": "^10.9.1"
+	},
+	"resolutions": {
+		"@types/react": "^17.0.0",
+		"@types/react-dom": "17.0.0"
+	},
+	"description": "aplicacao para gerenciamento de bobinas e documentos de mercadorias"
 }

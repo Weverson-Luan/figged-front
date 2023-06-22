@@ -12,14 +12,14 @@ import GlobalStyle from "./global/styles/global";
 import theme from "./global/styles/theme";
 
 const App = () => {
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Provider store={store}>
-        <AppRoutes />
-      </Provider>
-    </ThemeProvider>
-  );
+	return (
+		<ThemeProvider theme={theme}>
+			<GlobalStyle />
+			<Provider store={store}>
+				<AppRoutes />
+			</Provider>
+		</ThemeProvider>
+	);
 };
 
 export default App;

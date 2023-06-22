@@ -10,20 +10,20 @@ import { ApprovalPedendtes } from "../pages/approval-pedendtes";
 import { Aprovation } from "../pages/aprovation/aprovation";
 
 function AppRoutes() {
-  return (
-    <>
-      <HashRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/aprovation-listing" element={<AprovationListing />} />
-          <Route path="/aprovacao-pedentes" element={<ApprovalPedendtes />} />
-          <Route path="/aprovacao/:id_bobina" element={<Aprovation />} />
-        </Routes>
-      </HashRouter>
-      <ToastContainer />
-    </>
-  );
+	return (
+		<>
+			<HashRouter>
+				<Header />
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/aprovation-listing" element={<AprovationListing />} />
+					<Route path="/aprovacao-pedentes" element={<ApprovalPedendtes />} />
+					<Route path="/aprovacao/:idBobina" element={<Aprovation />} />
+				</Routes>
+			</HashRouter>
+			<ToastContainer />
+		</>
+	);
 }
 
 /**

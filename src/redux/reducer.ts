@@ -10,7 +10,7 @@ import { persistConfig, persistReducer } from "./persist";
  * Eu crio um redutor de raiz.
  */
 const reducer = combineReducers({
-  [user.name]: user.reducer,
+	[user.name]: user.reducer,
 }) as any;
 
 /**

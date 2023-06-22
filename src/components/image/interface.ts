@@ -4,14 +4,14 @@
 
 // props do styles WrapperHeader
 interface WrapperHeaderProps {
-  type?: string;
+	type?: string;
 }
 
 // props do componente ImageCustom
 interface ImageProps {
-  type: "aprovado" | "pedente" | "reprovado";
-  onClickDisapproved: () => void;
-  onClickApproved: () => void;
+	type: "aprovado" | "pedente" | "reprovado";
+	onClickDisapproved: () => void;
+	onClickApproved: () => void;
 }
 
 /**

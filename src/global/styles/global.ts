@@ -1,8 +1,7 @@
 /**
  * IMPORTS
  */
-import { createGlobalStyle, css } from "styled-components";
-import { devices } from "./devices";
+import { createGlobalStyle } from "styled-components";
 
 /**
  * I am a global style.

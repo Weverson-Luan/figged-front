@@ -2,13 +2,13 @@
  * IMPORTS
  */
 
-type WrapperTextFooterProps = {
-  background?: boolean;
-};
+interface WrapperTextFooterProps {
+	background?: boolean;
+}
 
-type TextNumberPageProps = {
-  color?: string;
-};
+interface TextNumberPageProps {
+	color?: string;
+}
 
 /**
  * EXPORTS

@@ -3,7 +3,7 @@
  */
 
 interface AprovationProps {
-  color: string;
+	color: string;
 }
 
 /**

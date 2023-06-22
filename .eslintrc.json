@@ -1,0 +1,94 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "standard-with-typescript",
+        "plugin:react/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+            "ts": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+    },
+    "plugins": [
+        "react",
+        "prettier"
+    ],
+    "ignorePatterns": [
+        "*.test.js",
+        "*.test.tsx",
+        "*.js",
+        "*trackrequest.d.ts",
+        "*jest.config.ts",
+        "*setup-dom.ts"
+    ],
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+        "no-unused-vars": "error", // NÃO FAZER UTILIZAÇÃO DE VAR
+        "consistent-return": "off", // UTILIZAR FUNÇÃO ARROW FUNCTION
+        "import/no-unresolved": 0,
+        "@typescript-eslint/no-explicit-any": "off", // <-- UTILIZAR ANY NO TIPO DE UMA PROPIEDADE
+        "react/jsx-props-no-spreading": "off", // <--- UTILIZAR SPREDING OPERATION
+        "@typescript-eslint/ban-ts-comment": "off", // UTILIZAR COMENTARIOS NO CODIGO
+        "global-require": "off",
+        "react/destructuring-assignment": "off",
+        "react-hooks/exhaustive-deps": "off", // <--- THIS IS THE NEW RULE
+        "react/jsx-no-useless-fragment": "off", // <--- UTILIZAR FRAGMENTO NO CODIGO
+        "no-console": "warn", // <--- UTILIZAR CONSOLE NO CODIGO
+        "import/prefer-default-export": "off", // <--- EXPORT DEFAULT OU EXPORT
+        "react/function-component-definition": "off",
+        "react/require-default-props": 0,
+        "import/no-extraneous-dependencies": [
+            "off",
+            {
+                "devDependencies": [
+                    "**/*.test.js",
+                    "**/*.spec.js"
+                ]
+            }
+        ], // <--- UTILIZAR IMPORTAÇÃO DE DEPENDECIAS DE TERCEIROS
+        "@typescript-eslint/no-namespace": "off", // <--- UTILIZAÇÃO DE RENOMEAR O NAMESPACE TYPESCRIPT
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/strict-boolean-expressions": "off",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        ],
+        "prettier/prettier": [
+            "error",
+            {
+                "singleQuote": false,
+                "trailingComma": "es5",
+                "arrowParens": "avoid",
+                "endOfLine": "auto",
+                "branckSpacing": true
+            }
+        ],
+        "no-use-before-define": "error", // <--- NÃO UTILIZAR NADA ANTES DE DEFINIR
+        "@typescript-eslint/no-use-before-define": [
+            "off"
+        ],
+        "import/extensions": [
+            "off",
+            "never"
+        ],
+        "react/prop-types": 0,
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": [
+            "error"
+        ]
+    }
+}
